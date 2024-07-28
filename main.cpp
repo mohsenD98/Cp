@@ -7,6 +7,7 @@
 #include <set>
 #include <math.h>
 #include <unordered_map>
+#include <algorithm>
 #include <map>
 #include <stdlib.h>
 #include <numeric>
@@ -76,21 +77,41 @@ int32_t main() {
 }
 
 void solve() {
-    ll n, k;
-    cin >> n >> k;
+    ll n, q;
+    cin >> n >> q;
 
-    string res;
-    string s;
-    int counter = 0;
-    for(int i=0; i< n; i++){
-        cin >> s;
+    string a, b;
 
-        if(counter++ % k != 0) continue;
-        for(int j=0; j<s.length(); j+=k){
-            res += s[j];
+    cin >> a >> b;
+
+
+    for(ll i=0; i<q; ++i){
+        ll r, l;
+        cin >> r >> l;
+
+        string tmpa = a;
+        string tmpb = b;
+
+        string newa(tmpa.begin() + r - 1 , tmpa.begin() + l);
+        string newb(tmpb.begin() + r - 1 , tmpb.begin() + l);
+
+        // cout << newa << "  " << newb << endl;
+
+        ll count = 0;
+
+        unordered_map<char, int> mapA;
+        unordered_map<char, int> mapb;
+        for(ll i = 0; i< newa.size(); ++i){
+            mapA[newa[i]]++;
+            mapb[newb[i]]++;
         }
-        res += "\n";
+
+        for(auto item: mapA){
+            count += abs(mapA[item.first] - mapb[item.first]);
+
+        }
+
+        cout << count << endl;
     }
 
-    cout << res;
 }
