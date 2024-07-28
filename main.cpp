@@ -78,9 +78,8 @@ int32_t main() {
 
 void solve() {
 
-    int m, n;
-    while(cin >> m >> n){
-        cout << abs(m-n)<< endl;
-    }
+    int a, b, c, n;
+    cin >> a >> b >> c >> n;
 
+    if(a > 0 && b > 0 && c>0 && a+b+c >= n && n>2) cout << "YES"; else cout << "NO";
 }
