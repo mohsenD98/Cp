@@ -81,17 +81,20 @@ void solve() {
     int n;
     cin >> n;
 
-    double sum = 0;
+    int q;
+    cin >> q;
 
-    while(n-- > 0){
+    int all = n*q;
 
-        double q, y;
-        cin >> q >> y;
+    while(q-- > 0){
 
-        sum += y * q;
+        int m;
+        cin >> m;
+
+        all -= m;
     }
 
-    cout << sum << endl;
+    cout << all + n << endl;
 
 
 
