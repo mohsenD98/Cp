@@ -73,45 +73,12 @@ int32_t main() {
     // cout.setf(ios::fixed);
     gogogo;
     file("Test");
-    presolve();
+    presolve(1);
 }
 
 void solve() {
-    ll n, q;
-    cin >> n >> q;
+    ll n;
+    cin >> n;
 
-    string a, b;
-
-    cin >> a >> b;
-
-
-    for(ll i=0; i<q; ++i){
-        ll r, l;
-        cin >> r >> l;
-
-        string tmpa = a;
-        string tmpb = b;
-
-        string newa(tmpa.begin() + r - 1 , tmpa.begin() + l);
-        string newb(tmpb.begin() + r - 1 , tmpb.begin() + l);
-
-        // cout << newa << "  " << newb << endl;
-
-        ll count = 0;
-
-        unordered_map<char, int> mapA;
-        unordered_map<char, int> mapb;
-        for(ll i = 0; i< newa.size(); ++i){
-            mapA[newa[i]]++;
-            mapb[newb[i]]++;
-        }
-
-        for(auto item: mapA){
-            count += abs(mapA[item.first] - mapb[item.first]);
-
-        }
-
-        cout << count << endl;
-    }
-
+    for(int i=0; i<n; ++i) cout << i+1 << " Abracadabra\n";
 }
