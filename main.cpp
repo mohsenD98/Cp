@@ -73,11 +73,11 @@ int32_t main() {
     // cout.setf(ios::fixed);
     gogogo;
     file("Test");
-    presolve(1);
+    presolve();
 }
 
 void solve() {
-    string s;
-    getline(cin, s);
-    cout << s;
+    float n, m;
+    cin >> n >> m;
+    cout << (int)((float)((n-2)/3) + .9999) * (int)((float)((m-2)/3) + .9999) << endl;
 }
