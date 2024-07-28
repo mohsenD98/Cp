@@ -73,12 +73,12 @@ int32_t main() {
     // cout.setf(ios::fixed);
     gogogo;
     file("Test");
-    presolve();
+    presolve(1);
 }
 
 void solve() {
-    ll n;
-    cin >> n;
+    ll n, m;
 
-    cout << abs(((((((n * 567) / 9) + 7492) * 235) / 47) - 498) / 10) % 10 << endl;
+    while(cin>>n>>m)
+        cout << abs(n-m) << endl;
 }
