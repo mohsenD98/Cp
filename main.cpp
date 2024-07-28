@@ -77,7 +77,8 @@ int32_t main() {
 }
 
 void solve() {
-    float n, m;
-    cin >> n >> m;
-    cout << (int)((float)((n-2)/3) + .9999) * (int)((float)((m-2)/3) + .9999) << endl;
+    ll n;
+    cin >> n;
+
+    cout << abs(((((((n * 567) / 9) + 7492) * 235) / 47) - 498) / 10) % 10 << endl;
 }
