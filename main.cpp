@@ -78,24 +78,9 @@ int32_t main() {
 
 void solve() {
 
-    int n;
-    cin >> n;
-
-    int q;
-    cin >> q;
-
-    int all = n*q;
-
-    while(q-- > 0){
-
-        int m;
-        cin >> m;
-
-        all -= m;
+    int m, n;
+    while(cin >> m >> n){
+        cout << abs(m-n)<< endl;
     }
-
-    cout << all + n << endl;
-
-
 
 }
