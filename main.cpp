@@ -61,11 +61,11 @@ void file(const string file = "Test")
 void solve();
 
 void presolve(int t = -1) {
-   if (t == -1) cin >> t;
-   while (t-- > 0) {
+   // if (t == -1) cin >> t;
+   // while (t-- > 0) {
         // cout << "Case " << i++  << ": ";
         solve();
-   }
+   // }
 }
 
 int32_t main() {
@@ -73,12 +73,26 @@ int32_t main() {
     // cout.setf(ios::fixed);
     gogogo;
     file("Test");
-    presolve(1);
+    presolve();
 }
 
 void solve() {
-    ll n, m;
 
-    while(cin>>n>>m)
-        cout << abs(n-m) << endl;
+    int n;
+    cin >> n;
+
+    double sum = 0;
+
+    while(n-- > 0){
+
+        double q, y;
+        cin >> q >> y;
+
+        sum += y * q;
+    }
+
+    cout << sum << endl;
+
+
+
 }
