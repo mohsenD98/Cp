@@ -61,11 +61,9 @@ void solve();
 
 void presolve(int t = -1) {
    if (t == -1) cin >> t;
-   int i=1;
-   while (i <= t) {
+   while (t-- > 0) {
         // cout << "Case " << i++  << ": ";
         solve();
-        cout << endl;
    }
 }
 
@@ -78,5 +76,8 @@ int32_t main() {
 }
 
 void solve() {
+    ll n;
+    cin >> n;
 
+    cout << n/4 + (n%4 == 0 ? 0 : 1)<< endl;
 }
