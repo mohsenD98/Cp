@@ -76,8 +76,21 @@ int32_t main() {
 }
 
 void solve() {
-    ll n;
-    cin >> n;
+    ll n, k;
+    cin >> n >> k;
 
-    cout << n/4 + (n%4 == 0 ? 0 : 1)<< endl;
+    string res;
+    string s;
+    int counter = 0;
+    for(int i=0; i< n; i++){
+        cin >> s;
+
+        if(counter++ % k != 0) continue;
+        for(int j=0; j<s.length(); j+=k){
+            res += s[j];
+        }
+        res += "\n";
+    }
+
+    cout << res;
 }
