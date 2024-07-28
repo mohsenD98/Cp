@@ -77,8 +77,7 @@ int32_t main() {
 }
 
 void solve() {
-    ll n;
-    cin >> n;
-
-    for(int i=0; i<n; ++i) cout << i+1 << " Abracadabra\n";
+    string s;
+    getline(cin, s);
+    cout << s;
 }
