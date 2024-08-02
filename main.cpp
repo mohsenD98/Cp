@@ -61,11 +61,11 @@ void file(const string file = "Test")
 void solve();
 
 void presolve(int t = -1) {
-   // if (t == -1) cin >> t;
-   // while (t-- > 0) {
+   if (t == -1) cin >> t;
+   while (t-- > 0) {
         // cout << "Case " << i++  << ": ";
         solve();
-   // }
+   }
 }
 
 int32_t main() {
@@ -73,13 +73,15 @@ int32_t main() {
     // cout.setf(ios::fixed);
     gogogo;
     file("Test");
-    presolve();
+    presolve(1);
 }
 
 void solve() {
+    ll r , l;
+    cin >> r >> l;
 
-    string s;
-    getline(cin, s);
-
-    if(s == "OCT 31" || s == "DEC 25") cout << "yup"; else cout << "nope";
+    if (l >= r && l-r > 1)  cout << "Dr. Chaz will have "<< l-r <<" pieces of chicken left over!\n";
+    else if (l >= r && l-r == 1)  cout << "Dr. Chaz will have "<< l-r <<" piece of chicken left over!\n";
+    else if (r > l && r-l == 1)  cout << "Dr. Chaz needs "<< r - l <<" more piece of chicken!\n";
+    else cout << "Dr. Chaz needs "<< r - l <<" more pieces of chicken!\n";
 }
