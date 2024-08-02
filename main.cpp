@@ -80,8 +80,8 @@ void solve() {
     ll r , l;
     cin >> r >> l;
 
-    if (l >= r && l-r > 1)  cout << "Dr. Chaz will have "<< l-r <<" pieces of chicken left over!\n";
-    else if (l >= r && l-r == 1)  cout << "Dr. Chaz will have "<< l-r <<" piece of chicken left over!\n";
-    else if (r > l && r-l == 1)  cout << "Dr. Chaz needs "<< r - l <<" more piece of chicken!\n";
-    else cout << "Dr. Chaz needs "<< r - l <<" more pieces of chicken!\n";
+    if (r == 0 && l == 0) cout << "Not a moose\n";
+    else if (r == l) cout << "Even " << r + l << "\n";
+    else if (r > l)  cout << "Odd " << 2 * r << "\n";
+    else if (r < l)  cout << "Odd " << 2 * l << "\n";
 }
