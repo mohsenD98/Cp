@@ -76,31 +76,26 @@ int32_t main() {
     presolve();
 }
 
+int sim(int a, int b){
+    if (a > b) return 1;
+    if (a == b) return 0;
+    if (a < b) return -1;
+}
+
 void solve() {
-    string s , t;
-    cin >> s;
-    cin >> t;
 
-    int k =0;
+    int a, b, c, d;
+    cin >> a >> b >> c >> d;
 
-    for(int i=0; i<s.size(); ++i){
-        if(k+1 > t.size()) break;
-        if(s[i] == '?' || s[i] == t[k]){
-            if(s[i] == '?') s[i] = t[k];
-            k++;
-        }
-    }
+    int ans = 0;
+    if (sim(a, c) + sim(b, d) > 0)
+        ans += 1;
+    if (sim(a, d) + sim(b, c) > 0)
+        ans += 1;
+    if (sim(b, c) + sim(a, d) > 0)
+        ans += 1;
+    if (sim(b, d) + sim(a, c) > 0)
+        ans += 1;
+    cout << ans << endl;
 
-    for(int i=0; i<s.size(); ++i){
-        if(s[i] == '?' ){
-            s[i] = 'a';
-        }
-    }
-
-    if(k == t.size() ){
-        cout << "YES" << endl;
-        cout << s << endl;
-    }else{
-        cout << "NO" << endl;
-    }
 }
