@@ -77,8 +77,28 @@ int32_t main() {
 }
 
 void solve() {
-    ll r;
-    cin >> r;
 
-    cout << (r%10) + (r/10) << endl;
+    int n, s, m;
+
+    cin >> n >> s >> m;
+
+    int flag = false;
+    int start = 0;
+
+    for(int i=0; i< n; ++i){
+        int l, r;
+        cin >> l >> r;
+
+        // cout << "comparing " << (s+start) << " " << l;
+
+        if(start + s <= l){
+            flag = true;
+        }
+
+        start = r;
+    }
+
+    if(start + s <= m) flag = true;
+
+    if(flag) cout << "YES" << endl; else cout << "NO" << endl;
 }
