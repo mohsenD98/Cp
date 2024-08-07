@@ -77,28 +77,30 @@ int32_t main() {
 }
 
 void solve() {
+    string s , t;
+    cin >> s;
+    cin >> t;
 
-    int n, s, m;
+    int k =0;
 
-    cin >> n >> s >> m;
-
-    int flag = false;
-    int start = 0;
-
-    for(int i=0; i< n; ++i){
-        int l, r;
-        cin >> l >> r;
-
-        // cout << "comparing " << (s+start) << " " << l;
-
-        if(start + s <= l){
-            flag = true;
+    for(int i=0; i<s.size(); ++i){
+        if(k+1 > t.size()) break;
+        if(s[i] == '?' || s[i] == t[k]){
+            if(s[i] == '?') s[i] = t[k];
+            k++;
         }
-
-        start = r;
     }
 
-    if(start + s <= m) flag = true;
+    for(int i=0; i<s.size(); ++i){
+        if(s[i] == '?' ){
+            s[i] = 'a';
+        }
+    }
 
-    if(flag) cout << "YES" << endl; else cout << "NO" << endl;
+    if(k == t.size() ){
+        cout << "YES" << endl;
+        cout << s << endl;
+    }else{
+        cout << "NO" << endl;
+    }
 }
