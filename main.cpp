@@ -73,15 +73,12 @@ int32_t main() {
     // cout.setf(ios::fixed);
     gogogo;
     file("Test");
-    presolve(1);
+    presolve();
 }
 
 void solve() {
-    ll r , l;
-    cin >> r >> l;
+    ll r;
+    cin >> r;
 
-    if (r == 0 && l == 0) cout << "Not a moose\n";
-    else if (r == l) cout << "Even " << r + l << "\n";
-    else if (r > l)  cout << "Odd " << 2 * r << "\n";
-    else if (r < l)  cout << "Odd " << 2 * l << "\n";
+    cout << (r%10) + (r/10) << endl;
 }
